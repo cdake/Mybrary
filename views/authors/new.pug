@@ -1,0 +1,9 @@
+extends ../layout.pug
+
+block content 
+      .container
+        h2 New Author
+        form(action="/authors", method="post")
+          include _form_fields.pug
+          a(href="/authors") Cancel
+          button(type="submit") Submit

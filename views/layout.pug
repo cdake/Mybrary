@@ -5,8 +5,29 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css")
-        title Daniyar's Home Page ExpressJS
-    body 
-      block content
-      block footer
-        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js")
+        if title
+          title MyBrary | #{title}
+        else 
+          title MyBrary Daniyar's Homepage
+        <header>
+          <nav class="navbar navbar-expand-sm bg-dark">
+            <div class="container">
+              <!-- Links -->
+              <ul class="navbar-nav text-white">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/authors">Authors</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/authors/new">Add Authors</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          include partials/errorMessage.pug
+        </header> 
+        block content
+        block footer
+          script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js")
